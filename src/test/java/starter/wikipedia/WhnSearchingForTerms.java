@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-class WhenSearchingForTerms {
+class WhnSearchingForTerms {
 
     /**
      * Define the webdriver instance to be used for these tests

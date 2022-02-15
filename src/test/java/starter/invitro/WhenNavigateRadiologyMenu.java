@@ -1,24 +1,30 @@
 package starter.invitro;
 
+import cucumber.api.CucumberOptions;
 import net.serenitybdd.core.Serenity;
 //import net.serenitybdd.core.steps.UIInteractionSteps;
-import net.serenitybdd.junit5.SerenityJUnit5Extension;
+//import net.serenitybdd.junit5.SerenityJUnit5Extension;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.thucydides.core.annotations.Managed;
 //import net.thucydides.core.annotations.SingleBrowser;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SerenityJUnit5Extension.class)
-class NavigateRadiologyMenu {
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        features="src/test/resources/features",
+        glue = "net.serenity_bdd.samples")
+class WhenNavigateRadiologyMenu {
 
     /**
      * Define the webdriver instance to be used for these tests
      */
-    @Managed(driver = "chrome")//, options = "headed")
-    WebDriver driver;
+   // @Managed(driver = "chrome", options = "headless")
+    //WebDriver driver;
 
     /**
      * Navigation actions. This is a UIInteraction class so it will be instantiated automatically by Serenity.
@@ -36,7 +42,7 @@ class NavigateRadiologyMenu {
      */
    // DisplayedArticle displayedArticle;
 
-    @Test
+   // @Test
     void searchBySingleKeyword() {
         navigate.toTheHomePage();
         //search.searchBy("Everest");
