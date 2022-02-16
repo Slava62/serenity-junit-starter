@@ -6,13 +6,13 @@ import org.openqa.selenium.Keys;
 
 @DefaultUrl("https://www.invitro.ru")
 public class MRT extends PageObject {
-
+/*
     public void openBasePage(){
         openAt("/radiology");
     }
 
     public void mrtClick() {
         $("//li/*[@href=\"/radiology/mrt/\"").click();
-    }
+    }*/
 
 }
