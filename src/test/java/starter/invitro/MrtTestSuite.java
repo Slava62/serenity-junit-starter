@@ -1,37 +1,34 @@
 package starter.invitro;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-//import net.serenitybdd.core.steps.UIInteractions;
+
+
+import io.cucumber.java.en.Given;
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
-//import net.thucydides.core.annotations.Step;
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import starter.steps.cucumber.MRTStepsDefinitions;
+import starter.steps.serenity.MRTSteps;
 
 /**
  * UIInteractionSteps let us define action classes which regroup related actions.
  * The @Step annotation is used to indicate that this action will appear as a step in the reports.
  */
 @RunWith(CucumberWithSerenity.class)
-/*@CucumberOptions(
-        features="src/test/resources/features",
-        glue = "net.serenity_bdd.samples")*/
-public class MRTActionsTestSuite {
+@CucumberOptions(
+        features="src/test/resources/features/clicking_the_main_menu_items/MRT",
+        glue = "starter.steps.cucumber")
+//@RunWith(SerenityRunner.class)
+public class MrtTestSuite {
 
-    //@Step("Navigate to the home page")
-    //public void toTheHomePage() {
-   //     openUrl("https://www.invitro.ru/");
-  // }
-    @Steps
-    nav nav;
 
-    @Given("User clicks MRT in main menu")
+   /* @Given("User clicks MRT in main menu")
     public void userClicksMRTInMainMenu() {
-       // mrt.openBasePage();
-       nav.theDuckDuckGoHomePage();
+       mrtSteps.open_mrt_page();
     }
 
     @When("he is not registered")
@@ -46,5 +43,5 @@ public class MRTActionsTestSuite {
 
     @And("MRT blocks are shown on the page")
     public void mrtBlocksAreShownOnThePage() {
-    }
+    }*/
 }
