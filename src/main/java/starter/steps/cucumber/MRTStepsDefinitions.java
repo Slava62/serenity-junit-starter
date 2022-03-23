@@ -1,11 +1,11 @@
 package starter.steps.cucumber;
 
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import org.assertj.core.api.Assertions;
 import starter.steps.serenity.MRTSteps;
 
 public class MRTStepsDefinitions {
@@ -13,25 +13,28 @@ public class MRTStepsDefinitions {
     MRTSteps mrtSteps;
 
 
-    @Given("User clicks MRT in main menu")
-    public void user_clicks_MRT_in_main_menu() {
-        mrtSteps.open_mrt_page();
+    @Given("user opens radiology page")
+    public void user_opens_radiology_page() {
+        mrtSteps.open_radiology_page();;
     }
 
-    @When("he is not registered")
-    public void he_is_not_registered() {
-        // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
-    }
-    @Then("MRT sub items is shown")
-    public void mrt_sub_items_is_shown() {
-        // Write code here that turns the phrase above into concrete actions
-       Assertions.assertThat(true).isTrue();// throw new io.cucumber.java.PendingException();
-    }
-    @Then("MRT blocks are shown on the page")
-    public void mrt_blocks_are_shown_on_the_page() {
-        // Write code here that turns the phrase above into concrete actions
-        Assertions.assertThat(true).isTrue();// throw new io.cucumber.java.PendingException();
+    @When("the user clicks MRT in menu")
+    public void user_clicks_MRT_in_menu() {
+        mrtSteps.click_MRT_in_main_menu();
     }
 
+    @Then("the user sees 9 sub items")
+    public void mrt_sub_items_are_shown() {
+       mrtSteps.check_the_items_count_is_10();
+    }
+
+    @Then("the user gets the page named {string}")
+    public void the_user_gets_the_page_named(String page) {
+        mrtSteps.check_the_tab_contains_num(page);
+    }
+
+    @And("the user clicks the item {string}")
+    public void the_user_clicks_the_item(String itemIndex) {
+        mrtSteps.click_the_menu_item(itemIndex);
+    }
 }

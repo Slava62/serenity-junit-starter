@@ -1,3 +1,4 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.maven.globalSettings": "C:\\Program Files\\Java\\builders\\apache-maven-3.6.3\\conf"
 }

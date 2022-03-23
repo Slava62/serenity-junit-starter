@@ -1,4 +1,4 @@
-target/
+thotarget/
 build
 .gradle
 pom.xml.tag
@@ -10,6 +10,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .idea
+.vscode
 *.iml
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
